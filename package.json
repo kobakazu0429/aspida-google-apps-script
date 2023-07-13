@@ -15,6 +15,10 @@
   "bugs": {
     "url": "https://github.com/kobakazu0429/aspida-google-apps-script/issues"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "dev": "pnpm run build --watch",
     "build": "vite build",
