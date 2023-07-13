@@ -1,0 +1,25 @@
+{
+  "name": "aspida-google-apps-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm run build --watch",
+    "build": "vite build",
+    "push": "clasp push",
+    "lint": "pnpm run lint:eslint && pnpm run lint:prettier",
+    "lint:eslint": "eslint \"./{src,test}/**/*.{js,ts,tsx,svelte}\" --fix",
+    "lint:prettier": "prettier \"./{src,test}/**/*.{js,ts,tsx,svelte}\" --write"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@kobakazu0429/eslint-config-typescript": "^3.1.5",
+    "@types/google-apps-script": "^1.0.64",
+    "@types/node": "^20.4.2",
+    "eslint": "^8.44.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.3"
+  }
+}
