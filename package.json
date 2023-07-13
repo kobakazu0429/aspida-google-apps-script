@@ -1,11 +1,20 @@
 {
   "name": "aspida-google-apps-script",
   "version": "1.0.0",
-  "description": "",
+  "description": "Google Apps Script client for aspida",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "license": "MIT",
+  "author": "kobakakzu0429 <kobakazu10@gmail.com>",
+  "homepage": "https://github.com/kobakazu0429/aspida-google-apps-script",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kobakazu0429/aspida-google-apps-script.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kobakazu0429/aspida-google-apps-script/issues"
+  },
   "scripts": {
     "dev": "pnpm run build --watch",
     "build": "vite build",
