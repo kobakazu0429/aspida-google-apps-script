@@ -75,8 +75,8 @@ export default (
     type?: RequestType
   ) {
     const send =
-      <V>(fn: (res: Response) => Promise<V>) =>
-      async () => {
+      <V>(fn: (res: Response) => V) =>
+      () => {
         const request = optionToRequest(params, type);
         const serializer = dataToURLString;
         const res = client(
@@ -107,7 +107,7 @@ export default (
       };
 
     return {
-      send: send(() => Promise.resolve()),
+      send: send(() => {}),
       json: send((res) => JSON.parse(res.getContentText())),
       text: send((res) => res.getContentText() as any),
       arrayBuffer: send((res) => res.getContent() as any),
