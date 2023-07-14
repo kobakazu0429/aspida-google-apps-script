@@ -24,8 +24,8 @@
     "build": "vite build",
     "push": "clasp push",
     "lint": "pnpm run lint:eslint && pnpm run lint:prettier",
-    "lint:eslint": "eslint \"./{src,test}/**/*.{js,ts,tsx,svelte}\" --fix",
-    "lint:prettier": "prettier \"./{src,test}/**/*.{js,ts,tsx,svelte}\" --write"
+    "lint:eslint": "eslint \"./{src,test,example}/**/*.{js,ts,tsx,svelte}\" --fix",
+    "lint:prettier": "prettier \"./{src,test,example}/**/*.{js,ts,tsx,svelte}\" --write"
   },
   "devDependencies": {
     "@google/clasp": "^2.4.2",

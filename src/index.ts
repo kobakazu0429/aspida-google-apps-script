@@ -1,12 +1,13 @@
 import type {
-  AspidaClient,
   HttpMethod,
   AspidaParams,
   RequestType,
   BasicHeaders,
+  HttpStatusOk,
   AspidaRequest,
+  AspidaResponse,
 } from "aspida";
-export type { AspidaClient, BasicHeaders } from "aspida";
+export type { BasicHeaders } from "aspida";
 
 // -------------
 // from: https://github.com/aspida/aspida/blob/4c74918ece72d5b440dc897d915c5cbbedb0120f/packages/aspida/src/index.ts
@@ -60,6 +61,18 @@ type Request = GoogleAppsScript.URL_Fetch.URLFetchRequestOptions;
 
 export type FetchConfig = Request & {
   baseURL?: string;
+};
+
+export type AspidaClient<Config> = {
+  baseURL: string | undefined;
+  fetch: <T, U = BasicHeaders, V = HttpStatusOk>(prefix: string, path: string, method: HttpMethod, params?: AspidaParams<Config>, type?: RequestType) => {
+      send(): AspidaResponse<void, U, V>;
+      json(): AspidaResponse<T, U, V>;
+      text(): AspidaResponse<string, U, V>;
+      arrayBuffer(): AspidaResponse<ArrayBuffer, U, V>;
+      blob(): AspidaResponse<Blob, U, V>;
+      formData(): AspidaResponse<FormData, U, V>;
+  };
 };
 
 export default (

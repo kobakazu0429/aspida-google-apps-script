@@ -10,7 +10,7 @@
     "dev": "pnpm run build --watch",
     "build": "vite build",
     "push": "clasp push",
-    "lint": "pnpm run lint:eslint && pnpm run lint:prettier",
+    "lint": "tsc -p . --noEmit && pnpm run lint:eslint && pnpm run lint:prettier",
     "lint:eslint": "eslint \"./{src,test}/**/*.{js,ts,tsx,svelte}\" --fix",
     "lint:prettier": "prettier \"./{src,test}/**/*.{js,ts,tsx,svelte}\" --write",
     "generate:api": "openapi2aspida -c aspida.config.js"
@@ -27,7 +27,11 @@
     "vite-plugin-static-copy": "^0.16.0"
   },
   "dependencies": {
-    "aspida": "^1.12.0",
     "aspida-google-apps-script": "link:../"
+  },
+  "pnpm": {
+    "overrides": {
+      "aspida": "$aspida-google-apps-script"
+    }
   }
 }

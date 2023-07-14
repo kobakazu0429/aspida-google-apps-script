@@ -1,7 +1,7 @@
 import aspida from "aspida-google-apps-script";
 import api from "../api/$api";
 
-async function main() {
+function main() {
   const scriptProperties = PropertiesService.getScriptProperties();
   const token = scriptProperties.getProperty("ecp-api-token");
 
@@ -15,7 +15,7 @@ async function main() {
     })
   );
 
-  const res = await client.foreign_population_2.get({
+  const res = client.foreign_population_2.get({
     query: { start_year: 2013, end_year: 2014 },
   });
   console.log(res.body);
