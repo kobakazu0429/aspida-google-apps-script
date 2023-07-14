@@ -25,7 +25,8 @@
     "push": "clasp push",
     "lint": "pnpm run lint:eslint && pnpm run lint:prettier",
     "lint:eslint": "eslint \"./{src,test,example}/**/*.{js,ts,tsx,svelte}\" --fix",
-    "lint:prettier": "prettier \"./{src,test,example}/**/*.{js,ts,tsx,svelte}\" --write"
+    "lint:prettier": "prettier \"./{src,test,example}/**/*.{js,ts,tsx,svelte}\" --write",
+    "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
     "@google/clasp": "^2.4.2",
