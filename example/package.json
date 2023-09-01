@@ -27,6 +27,7 @@
     "vite-plugin-static-copy": "^0.16.0"
   },
   "dependencies": {
+    "aspida": "link:..",
     "aspida-google-apps-script": "link:../"
   },
   "pnpm": {

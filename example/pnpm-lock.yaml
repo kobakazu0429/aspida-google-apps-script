@@ -8,6 +8,9 @@ overrides:
   aspida: link:../
 
 dependencies:
+  aspida:
+    specifier: link:..
+    version: link:..
   aspida-google-apps-script:
     specifier: link:../
     version: link:../

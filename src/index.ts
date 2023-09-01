@@ -42,7 +42,7 @@ export const dataToURLString = (data: Record<string, any>) =>
 
 export const optionToRequest = (
   option?: AspidaParams,
-  type?: RequestType
+  _type?: RequestType
 ): AspidaRequest | undefined => {
   if (option?.body === undefined) return option;
 
@@ -65,13 +65,19 @@ export type FetchConfig = Request & {
 
 export type AspidaClient<Config> = {
   baseURL: string | undefined;
-  fetch: <T, U = BasicHeaders, V = HttpStatusOk>(prefix: string, path: string, method: HttpMethod, params?: AspidaParams<Config>, type?: RequestType) => {
-      send(): AspidaResponse<void, U, V>;
-      json(): AspidaResponse<T, U, V>;
-      text(): AspidaResponse<string, U, V>;
-      arrayBuffer(): AspidaResponse<ArrayBuffer, U, V>;
-      blob(): AspidaResponse<Blob, U, V>;
-      formData(): AspidaResponse<FormData, U, V>;
+  fetch: <T, U = BasicHeaders, V = HttpStatusOk>(
+    prefix: string,
+    path: string,
+    method: HttpMethod,
+    params?: AspidaParams<Config>,
+    type?: RequestType
+  ) => {
+    send(): AspidaResponse<void, U, V>;
+    json(): AspidaResponse<T, U, V>;
+    text(): AspidaResponse<string, U, V>;
+    arrayBuffer(): AspidaResponse<ArrayBuffer, U, V>;
+    blob(): AspidaResponse<Blob, U, V>;
+    formData(): AspidaResponse<FormData, U, V>;
   };
 };
 
@@ -120,6 +126,7 @@ export default (
       };
 
     return {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       send: send(() => {}),
       json: send((res) => JSON.parse(res.getContentText())),
       text: send((res) => res.getContentText() as any),

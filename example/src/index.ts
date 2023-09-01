@@ -1,6 +1,7 @@
 import aspida from "aspida-google-apps-script";
 import api from "../api/$api";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function main() {
   const scriptProperties = PropertiesService.getScriptProperties();
   const token = scriptProperties.getProperty("ecp-api-token");

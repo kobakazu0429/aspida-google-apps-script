@@ -24,8 +24,8 @@
     "build": "vite build",
     "push": "clasp push",
     "lint": "pnpm run lint:eslint && pnpm run lint:prettier",
-    "lint:eslint": "eslint \"./{src,test,example}/**/*.{js,ts,tsx,svelte}\" --fix",
-    "lint:prettier": "prettier \"./{src,test,example}/**/*.{js,ts,tsx,svelte}\" --write",
+    "lint:eslint": "eslint \"./{src,test,example}/**/*.ts\" --fix",
+    "lint:prettier": "prettier \"./{src,test,example}/**/*.ts\" --write",
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
